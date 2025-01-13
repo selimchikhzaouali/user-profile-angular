@@ -1,0 +1,232 @@
+.user-profile-card {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-info h2 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.user-info p {
+    margin: 0;
+    color: #666;
+}
+
+.user-number {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.error-message {
+    color: #ff4d4f;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.refresh-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background-color: #0056b3;
+}
+
+.refresh-btn:disabled {
+    background-color: #b0bec5;
+    color: #f1f1f1;
+    cursor: not-allowed;
+    border: 1px solid #ced4da;
+    opacity: 0.6;
+}
+
+.refresh-btn:disabled:hover {
+    background-color: #b0bec5;
+}
+
+.todos-section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.todos-section h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.todo-item {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+}
+
+.todo-item:hover {
+    background-color: #e2e6ea;
+}
+
+.todo-title {
+    font-size: 1em;
+    color: #333;
+}
+
+.status {
+    text-align: left;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.completed {
+    color: #28a745;
+}
+
+.not-completed {
+    color: #ffc107;
+}
+
+.icon i {
+    margin-right: 5px;
+}
+
+.todo-item.completed {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.todo-item.completed .todo-title {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+.todo-table td {
+    padding: 10px;
+    border: none;
+}
+
+/* Loading spinner styles */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #007bff;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.loading-spinner i {
+    margin-right: 10px;
+    font-size: 2em;
+}
+
+/* Responsive styles for mobile and tablet */
+@media (max-width: 768px) {
+    .user-profile-card {
+        width: 90%;
+        /* Take up most of the screen width */
+        padding: 15px;
+    }
+
+    .user-avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .user-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .todo-table {
+        width: 100%;
+        /* Make the table take full width on mobile */
+    }
+
+    .todo-table td {
+        font-size: 0.9em;
+        /* Make text a bit smaller on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .user-profile-card {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .user-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .refresh-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .todo-table td {
+        font-size: 0.8em;
+        /* Further reduce text size on very small screens */
+    }
+
+    .todo-title {
+        max-width: 200px;
+        /* Limit the width of the title to avoid overflow */
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}

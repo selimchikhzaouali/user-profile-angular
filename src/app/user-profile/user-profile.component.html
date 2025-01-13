@@ -1,0 +1,38 @@
+<div class="user-profile-card">
+    <p class="user-number">Displaying user number {{ userId }}</p>
+    <div class="user-avatar">
+        <img [src]="'https://robohash.org/' + user?.id + '?set=set5&size=150x150'" alt="{{ user?.name }}" />
+    </div>
+    <div class="user-info">
+        <h2>{{ user?.name }}</h2>
+        <p>Email: {{ user?.email }}</p>
+    </div>
+    <button (click)="refreshUser()" class="refresh-btn" [disabled]="isLoading == true">Get another user</button>
+
+    <!-- Show loading spinner when isLoading is true -->
+    <div *ngIf="isLoading" class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i> Loading...
+    </div>
+
+    <!-- Error message -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+
+    <div *ngIf="todos.length > 0" class="todos-section">
+        <h3>Tasks:</h3>
+        <table class="todo-table">
+            <tr *ngFor="let todo of todos" class="todo-item" [class.completed]="todo.completed">
+                <td class="todo-title">{{ todo.title }}</td>
+                <td class="status">
+                    <span *ngIf="todo.completed" class="icon completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </span>
+                    <span *ngIf="!todo.completed" class="icon not-completed">
+                        <i class="fas fa-times-circle"></i> Ongoing
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
