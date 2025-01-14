@@ -49,3 +49,7 @@ To run the unit tests, simply use:
 ```bash
 ng test
 ```
+
+# Preview
+
+![](https://github.com/selimchikhzaouali/user-profile-angular/blob/main/preview.png)
